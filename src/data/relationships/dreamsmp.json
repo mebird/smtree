@@ -1,0 +1,116 @@
+[
+    {
+        "type": "divorced",
+        "to_id": 2,
+        "from_id": 3,
+        "smp_id": 1
+    },
+    {
+        "type": "sibling",
+        "to_id": 14,
+        "from_id": 13,
+        "smp_id": 1
+    },
+    {
+        "type": "sibling",
+        "to_id": 14,
+        "from_id": 11,
+        "smp_id": 1
+    },
+    {
+        "type": "sibling",
+        "to_id": 14,
+        "from_id": 2,
+        "smp_id": 1
+    },
+    {
+        "type": "sibling",
+        "to_id": 13,
+        "from_id": 11,
+        "smp_id": 1
+    },
+    {
+        "type": "sibling",
+        "to_id": 13,
+        "from_id": 2,
+        "smp_id": 1
+    },
+    {
+        "type": "sibling",
+        "to_id": 11,
+        "from_id": 2,
+        "smp_id": 1
+    },
+    {
+        "type": "parent/child",
+        "to_id": 14,
+        "from_id": 12,
+        "smp_id": 1
+    },
+    {
+        "type": "adopted",
+        "to_id": 13,
+        "from_id": 12,
+        "smp_id": 1,
+        "note": "found him by the side of the road"
+    },
+    {
+        "type": "parent/child",
+        "to_id": 11,
+        "from_id": 12,
+        "smp_id": 1
+    },
+    {
+        "type": "parent/child",
+        "to_id": 2,
+        "from_id": 12,
+        "smp_id": 1
+    },
+    {
+        "type": "engaged",
+        "to_id": 4,
+        "from_id": 16,
+        "smp_id": 1
+    },
+    {
+        "type": "married",
+        "to_id": 115,
+        "from_id": 5,
+        "smp_id": 1
+    },
+    {
+        "type": "parent/child",
+        "to_id": 6,
+        "from_id": 15,
+        "smp_id": 1
+    },
+    { "type": "engaged", "from_id": 6, "to_id": 25, "smp_id": 1 },
+    { "type": "engaged", "from_id": 6, "to_id": 24, "smp_id": 1 },
+    { "type": "engaged", "from_id": 25, "to_id": 24, "smp_id": 1 },
+    { "type": "married", "from_id": 14, "to_id": 117, "smp_id": 1 },
+    { "type": "parent/child", "from_id": 2, "to_id": 16, "smp_id": 1 },
+    { "type": "ex-fiance", "from_id": 19, "to_id": 24, "smp_id": 1 },
+    { "type": "ex-fiance", "from_id": 21, "to_id": 24, "smp_id": 1 },
+    { "type": "ex-fiance", "from_id": 21, "to_id": 25, "smp_id": 1 },
+    { "type": "dating/dated", "from_id": 23, "to_id": 29, "smp_id": 1 },
+    { "type": "dating/dated", "from_id": 29, "to_id": 25, "smp_id": 1 },
+    { "type": "dating/dated", "from_id": 11, "to_id": 24, "smp_id": 1 },
+    { "type": "married", "from_id": 15, "to_id": 20, "smp_id": 1 },
+    { "type": "adopted", "from_id": 12, "to_id": 24, "smp_id": 1 },
+    { "type": "adopted", "from_id": 21, "to_id": 16, "smp_id": 1 },
+    { "type": "dating/dated", "from_id": 4, "to_id": 5, "smp_id": 1 },
+    { "type": "dating/dated", "from_id": 23, "to_id": 2, "smp_id": 1 },
+    { "type": "dating/dated", "from_id": 2, "to_id": 19, "smp_id": 1 },
+    { "type": "dating/dated", "from_id": 2, "to_id": 24, "smp_id": 1 },
+    { "type": "\"maid\" for", "from_id": 26, "to_id": 24, "smp_id": 1 },
+    { "type": "\"maid\" for", "from_id": 26, "to_id": 16, "smp_id": 1 },
+    { "type": "parent/child", "from_id": 3, "to_id": 16, "smp_id": 1 },
+    { "type": "dating/dated", "from_id": 2, "to_id": 4, "smp_id": 1 },
+    { "type": "parent/child", "from_id": 118, "to_id": 2, "smp_id": 1 },
+    {
+        "type": "divorced",
+        "to_id": 12,
+        "from_id": 118,
+        "smp_id": 1
+    }
+]

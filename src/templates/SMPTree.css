@@ -1,0 +1,30 @@
+.smp-tree-text-wrapper {
+    position: absolute;
+    bottom: 76px;
+    padding: 12px;
+    height: fit-content;
+    z-index: 1;
+}
+
+.smp-tree-text-wrapper .icon-text {
+    font-size: calc(7px + 1.5vw);
+    padding: 12px;
+}
+
+@media (max-width: 480px) {
+    .smp-tree-text-wrapper .icon-text {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 980px) {
+    .smp-tree-text-wrapper .icon-text {
+        font-size: calc(20px + 2.5vw);
+    }
+}
+
+@media (min-width: 980px) {
+    .smp-tree-text-wrapper .icon-text {
+        font-size: 45px;
+    }
+}

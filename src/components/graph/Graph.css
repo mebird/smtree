@@ -1,0 +1,25 @@
+.graph-wrapper {
+    position: absolute;
+}
+
+.graph-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -128px;
+    margin-left: -128px;
+    z-index: 7;
+}
+
+.graph-overlay img {
+    width: 256px;
+    height: 256px;
+}
+
+.graph-wrapper ~ .graph-menu-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 12px;
+    z-index: 2;
+}

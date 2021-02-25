@@ -1,0 +1,12 @@
+{
+    "character_id": 5,
+    "ign": "GeorgeNotFound",
+    "name": "George",
+    "uuid": "bd3dd5a4-0438-4699-b2fd-36f518154b41",
+    "socials": {
+        "youtube": "https://www.youtube.com/GeorgeNotFound",
+        "twitter": "https://twitter.com/GeorgeNotFound",
+        "twitch": "https://www.twitch.tv/georgenotfound",
+        "instagram": "https://www.instagram.com/georgenotfound/"
+    }
+}

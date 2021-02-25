@@ -1,0 +1,43 @@
+.icon-link-svg,
+.icon-text {
+    background-color: black;
+    box-shadow: 1px 3px 0 0 black, 3px 5px 0 0 black;
+    border-radius: 6px;
+    transition-duration: 0.5s;
+}
+
+.icon-text {
+    padding: 2px;
+    display: inline-block;
+    background-color: black;
+    font-weight: bold;
+    margin: 0;
+    color: white;
+}
+
+.icon-text-box {
+    padding: 8px;
+    border: 3px solid black;
+    box-shadow: 3px 3px black;
+    background-color: white;
+    font-size: 14px;
+    margin-bottom: 8px;
+    height: fit-content;
+}
+
+.icon-link-svg {
+    padding: 3px;
+}
+
+.icon-link {
+    font-size: 25px;
+}
+
+.icon-link-svg:hover,
+.icon-link:focus {
+    transform: translateY(-6px);
+}
+
+.icon-link + .icon-link {
+    margin-left: 6px;
+}
