@@ -14,30 +14,12 @@
     {
         "type": "sibling",
         "to_id": 14,
-        "from_id": 11,
-        "smp_id": 1
-    },
-    {
-        "type": "sibling",
-        "to_id": 14,
         "from_id": 2,
         "smp_id": 1
     },
     {
         "type": "sibling",
         "to_id": 13,
-        "from_id": 11,
-        "smp_id": 1
-    },
-    {
-        "type": "sibling",
-        "to_id": 13,
-        "from_id": 2,
-        "smp_id": 1
-    },
-    {
-        "type": "sibling",
-        "to_id": 11,
         "from_id": 2,
         "smp_id": 1
     },
