@@ -115,7 +115,7 @@
         "smp_id": 1
     },
     { "type": "adopted", "from_id": 29, "to_id": 121, "smp_id": 1 },
-    { "type": "adopted", "from_id": 13, "to_id": 121, "smp_id": 1 },
+    { "type": "adopted", "from_id": 13, "to_id": 119, "smp_id": 1 },
     { "type": "partners", "from_id": 15, "to_id": 20, "smp_id": 1 },
     { "type": "partners", "from_id": 123, "to_id": 4, "smp_id": 1 },
     { "type": "partners", "from_id": 29, "to_id": 23, "smp_id": 1 },
