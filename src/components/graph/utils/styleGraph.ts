@@ -9,6 +9,7 @@ export const getDirectedSize = (l: Link) => {
         case RelationshipType.ADOPTION:
         case RelationshipType.GOD_RELATIONSHIP:
         case RelationshipType.MAID:
+        case RelationshipType.ANCESTOR:
             return 256;
         default:
             return 0;

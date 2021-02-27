@@ -2,10 +2,12 @@ export enum RelationshipType {
     // General SMP types
     MARRIED = 'married',
     ENGAGED = 'engaged',
+    PARTNER = 'partners',
     EX_FIANCE = 'ex-fiance',
     PARENT_CHILD = 'parent/child',
     DIVORCED = 'divorced',
     DATING = 'dating/dated',
+    ANCESTOR = 'ancestor',
     BROKE_UP = 'broke up',
     GOD_RELATIONSHIP = 'godparent',
     ADOPTION = 'adopted',
@@ -100,7 +102,7 @@ export interface CharacterMetadata {
     lives: number;
     wins?: number;
     wiki_url: string;
-    faction: string;
+    factions: string[];
     quote?: string;
 }
 

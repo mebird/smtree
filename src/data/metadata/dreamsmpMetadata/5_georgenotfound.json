@@ -1,7 +1,7 @@
 {
     "smp_id": 1,
     "character_id": 5,
-    "lives": 2,
+    "lives": 3,
     "quote": "I'm just going to make a house, 'cause like it has to be done.",
-    "faction": "dream smp"
+    "factions": ["KinokoKingdom"]
 }

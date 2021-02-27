@@ -3,5 +3,5 @@
     "character_id": 7,
     "lives": 1,
     "quote": "[Who are you?] Your worst nightmare.",
-    "faction": "dream smp"
+    "factions": ["dream smp"]
 }

@@ -2,6 +2,6 @@
     "smp_id": 1,
     "character_id": 16,
     "lives": 2,
-    "faction": "l'manberg",
+    "factions": ["neutral"],
     "quote": "Hi, nice to meet you, I’m an orphan."
 }

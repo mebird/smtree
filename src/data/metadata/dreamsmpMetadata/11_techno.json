@@ -3,5 +3,5 @@
     "character_id": 11,
     "lives": 3,
     "quote": "The only universal language is violence.",
-    "faction": "anarchy"
+    "factions": ["The Syndicate"]
 }

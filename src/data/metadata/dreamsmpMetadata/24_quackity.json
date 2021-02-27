@@ -1,7 +1,7 @@
 {
     "smp_id": 1,
     "character_id": 24,
-    "lives": 2,
-    "faction": "l'manberg",
+    "lives": 1,
+    "factions": ["neutral"],
     "quote": "He's burning so hard in hell the flames can't even go out with my piss!"
 }

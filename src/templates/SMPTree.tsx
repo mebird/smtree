@@ -90,7 +90,7 @@ export const query = graphql`
                 }
                 character_id
                 lives
-                faction
+                factions
                 quote
                 wins
             }

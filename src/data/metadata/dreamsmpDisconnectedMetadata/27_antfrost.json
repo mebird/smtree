@@ -2,5 +2,5 @@
     "smp_id": -1,
     "character_id": 27,
     "lives": 3,
-    "faction": "the badlands"
+    "factions": ["the badlands"]
 }

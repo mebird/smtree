@@ -1,7 +1,7 @@
 {
     "smp_id": 1,
     "character_id": 4,
-    "lives": 2,
+    "lives": 1,
     "quote": "A king's time as a ruler rises and falls like the sun. One day, George, the sun will set, and my time here will rise with you.",
-    "faction": "dream smp"
+    "factions": ["pandora's vault"]
 }

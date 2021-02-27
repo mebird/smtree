@@ -1,6 +1,6 @@
 {
-    "smp_id": -1,
+    "smp_id": 1,
     "character_id": 114,
     "lives": 3,
-    "faction": "l'manberg"
+    "factions": ["neutral"]
 }

@@ -2,5 +2,5 @@
     "smp_id": 2,
     "character_id": 42,
     "wins": 0,
-    "faction": "the hermits"
+    "factions": ["the hermits"]
 }

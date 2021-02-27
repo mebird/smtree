@@ -1,5 +1,6 @@
 {
     "smp_id": 2,
     "character_id": 6,
-    "wins": 1
+    "wins": 1,
+    "factions": ["KinokoKingdom"]
 }

@@ -1,3 +1,4 @@
+import { intersection } from 'lodash';
 import { Link, Node } from './buildGraph';
 import { LinkFilter, NodeFilter } from './manageGraph';
 
@@ -32,7 +33,7 @@ export const nodeFilters: FiltersWithContext<Node, NodeFilter> = {
     smp_id: pass,
     lives: ls => n => ls.includes(n.lives),
     wiki_url: pass,
-    faction: fs => n => fs.includes(n.faction),
+    factions: fs => n => !!intersection(fs, (n.factions as unknown) as string[][]).length,
     wins: ws => n => ws.includes(n.wins),
     socials: pass,
     fields: pass,

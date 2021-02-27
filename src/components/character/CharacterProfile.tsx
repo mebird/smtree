@@ -33,7 +33,7 @@ const CharacterProfile = React.forwardRef<HTMLDivElement, CharacterProfileProps>
             <div className="character-content">
                 <div className="character-header">
                     <IconText text={name} />
-                    {maxLives !== undefined ? (
+                    {maxLives !== undefined && lives >= 0 ? (
                         <div className="character-stats">
                             <CharacterStats max={maxLives} current={lives} liveIcon={FullHeart} deadIcon={EmptyHeart} />
                         </div>

@@ -9,6 +9,7 @@ import React, {
     MutableRefObject,
     RefObject,
 } from 'react';
+import { flatten } from 'lodash';
 import { SMPData } from '../../../Model';
 import { LinkFilter, NodeFilter } from '../utils/manageGraph';
 import { GraphMenuTopButton } from '../buttons/GraphScrollButtons';
@@ -27,7 +28,7 @@ export interface GraphFilterMenuProps extends SMPData {
 
 // Create a set of options indexed with the given field from the provided record set
 const createOptions = (srcField: string, values: Record<string, any>[], destField?: string): Record<string, any>[] =>
-    Array.from(new Set(values.map(v => v[srcField])))
+    Array.from(new Set(flatten(values.map(v => v[srcField]))))
         .filter(v => v !== '' && v !== undefined && v !== null)
         .sort()
         .map(v => ({ [destField || srcField]: v }));
@@ -134,9 +135,9 @@ const GraphFilterMenu: FunctionComponent<GraphFilterMenuProps> = props => {
             type: 'links',
             values: [],
         },
-        faction: {
-            options: createOptions('faction', characters),
-            type: 'faction',
+        factions: {
+            options: createOptions('factions', characters),
+            type: 'factions',
             label: 'from one of',
             values: [],
         },

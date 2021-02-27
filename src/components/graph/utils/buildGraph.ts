@@ -8,7 +8,6 @@ export interface Node extends CharacterWithContext {
     lives: number;
     neighbors: Node[];
     links: Link[];
-    faction: string;
     x: number;
     y: number;
 }

@@ -2,6 +2,6 @@
     "smp_id": 1,
     "character_id": 21,
     "lives": 3,
-    "faction": "l'manberg",
+    "factions": ["dream smp"],
     "quote": "Down with the revolution, boys! It was never meant to be."
 }

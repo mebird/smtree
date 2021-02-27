@@ -3,5 +3,5 @@
     "character_id": 6,
     "lives": 2,
     "quote": "There's one more animal I need to speak to.",
-    "faction": "l'manberg"
+    "factions": ["l'manberg"]
 }
