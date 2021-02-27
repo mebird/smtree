@@ -1,9 +1,0 @@
-.stat-container {
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-}
-
-.stat-container + .stat-container {
-    margin-left: 3px;
-}

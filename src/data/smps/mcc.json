@@ -1,8 +1,0 @@
-{
-    "smp_id": 2,
-    "name": "MCC",
-    "max_lives": -1,
-    "primary_color": "#F12727",
-    "secondary_color": "#A30000",
-    "description": "Interactive graph of MCC (Minecraft Championship) teams."
-}
