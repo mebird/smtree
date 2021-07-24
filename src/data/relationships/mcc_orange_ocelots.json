@@ -76,5 +76,11 @@
     { "to_id": 52, "from_id": 48, "type": "coral carollers", "smp_id": 2, "season": 1, "part": "MCC13" },
     { "to_id": 6, "from_id": 43, "type": "coral carollers", "smp_id": 2, "season": 1, "part": "MCC13" },
     { "to_id": 6, "from_id": 48, "type": "coral carollers", "smp_id": 2, "season": 1, "part": "MCC13" },
-    { "to_id": 43, "from_id": 48, "type": "coral carollers", "smp_id": 2, "season": 1, "part": "MCC13" }
+    { "to_id": 43, "from_id": 48, "type": "coral carollers", "smp_id": 2, "season": 1, "part": "MCC13" },
+    { "to_id": 66, "from_id": 46, "type": "orange ocelots", "smp_id": 2, "season": 2, "part": "MCC P21" },
+    { "to_id": 66, "from_id": 75, "type": "orange ocelots", "smp_id": 2, "season": 2, "part": "MCC P21" },
+    { "to_id": 66, "from_id": 127, "type": "orange ocelots", "smp_id": 2, "season": 2, "part": "MCC P21" },
+    { "to_id": 46, "from_id": 75, "type": "orange ocelots", "smp_id": 2, "season": 2, "part": "MCC P21" },
+    { "to_id": 46, "from_id": 127, "type": "orange ocelots", "smp_id": 2, "season": 2, "part": "MCC P21" },
+    { "to_id": 75, "from_id": 127, "type": "orange ocelots", "smp_id": 2, "season": 2, "part": "MCC P21" }
 ]

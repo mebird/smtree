@@ -8,6 +8,7 @@ export const query = graphql`
                 reddit
                 github
                 author
+                youtube
             }
         }
     }

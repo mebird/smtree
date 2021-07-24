@@ -10,14 +10,14 @@ import SocialLinks from '../textAndIcons/SocialLinks';
 
 // @ts-ignore
 const Layout = ({ children }) => {
-    const { twitter, reddit, author } = useSiteMetadata();
+    const { twitter, reddit, author, youtube } = useSiteMetadata();
     return (
         <>
             <main className="content">{children}</main>
             <footer className="footer">
                 <div className="footer-content fly-in">
-                    <SocialLinks socials={{ twitter, reddit }} tabIndex={1} />
                     <IconLinkInternal src="/" icon={faHome} tabIndex={1} />
+                    <SocialLinks socials={{ twitter, reddit, youtube }} tabIndex={1} />
                     <IconLinkInternal src="/info" icon={faInfo} tabIndex={1} />
                 </div>
                 <div className="footer-content fly-in">

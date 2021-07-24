@@ -22,7 +22,7 @@ module.exports = {
         reddit: 'https://www.reddit.com/user/mebird_',
         github: 'https://github.com/mebird',
         twitch: '',
-        youtube: '',
+        youtube: 'https://www.youtube.com/channel/UCfxj9Y4b88wORm4Dca61ULQ',
     },
     plugins: [
         `gatsby-plugin-react-helmet`,

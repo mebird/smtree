@@ -76,5 +76,11 @@
     { "to_id": 26, "from_id": 90, "type": "yellow yetis", "smp_id": 2, "season": 1, "part": "MCC13" },
     { "to_id": 67, "from_id": 93, "type": "yellow yetis", "smp_id": 2, "season": 1, "part": "MCC13" },
     { "to_id": 67, "from_id": 90, "type": "yellow yetis", "smp_id": 2, "season": 1, "part": "MCC13" },
-    { "to_id": 93, "from_id": 90, "type": "yellow yetis", "smp_id": 2, "season": 1, "part": "MCC13" }
+    { "to_id": 93, "from_id": 90, "type": "yellow yetis", "smp_id": 2, "season": 1, "part": "MCC13" },
+    { "to_id": 128, "from_id": 129, "type": "yellow yaks", "smp_id": 2, "season": 2, "part": "MCCP21" },
+    { "to_id": 128, "from_id": 130, "type": "yellow yaks", "smp_id": 2, "season": 2, "part": "MCCP21" },
+    { "to_id": 128, "from_id": 131, "type": "yellow yaks", "smp_id": 2, "season": 2, "part": "MCCP21" },
+    { "to_id": 129, "from_id": 130, "type": "yellow yaks", "smp_id": 2, "season": 2, "part": "MCCP21" },
+    { "to_id": 129, "from_id": 131, "type": "yellow yaks", "smp_id": 2, "season": 2, "part": "MCCP21" },
+    { "to_id": 130, "from_id": 131, "type": "yellow yaks", "smp_id": 2, "season": 2, "part": "MCCP21" }
 ]
