@@ -2,8 +2,8 @@ import { program } from 'commander';
 import { Relationship, RelationshipType } from './src/Model';
 import fs from 'fs';
 import path from 'path';
-import { parse } from 'node-html-parser';
 import axios from 'axios';
+import { max } from 'lodash';
 
 const charDir = path.join(__dirname, 'src', 'data', 'characters');
 const mccMetadataDir = path.join(__dirname, 'src', 'metadata', 'mccMetadata');
@@ -16,21 +16,25 @@ program
     .option('-j, --twitch <url>', 'twitch', '')
     .action(async (ign, name) => {
         const { yt, twt, twitch } = program.opts();
-        let lastCharacterFileName = fs.readdirSync(charDir).pop();
-        let lastId = 0;
-        if (lastCharacterFileName) {
-            lastCharacterFileName = path.parse(lastCharacterFileName).base;
-            lastId = parseInt(lastCharacterFileName.substring(0, lastCharacterFileName.indexOf('_')));
-        }
-        const id = lastId + 1;
+        const characterFilenames = fs.readdirSync(charDir);
 
+        // check if there's already a file for this char
+        const match = characterFilenames.find(f => f.includes(`_${ign}.json`));
+        if (match) {
+            console.error(`File already exists for character: ${match}`);
+        }
+
+        // find the max id in use
+        const takenIds = fs.readdirSync(charDir).map(f => {
+            const fn = path.parse(f).base;
+            return parseInt(fn.substring(0, fn.indexOf('_')));
+        });
+        const id = (max(takenIds) || -1) + 1;
+
+        // get mc uuid
         let uuid = '';
         try {
-            const res = await axios
-                .get(`https://mcuuid.net/?q=${ign}`)
-                .then(res => parse(res.data).querySelector('#results_id'));
-            if (!res) throw new Error('No res id field found');
-            uuid = res.getAttribute('value') || '';
+            uuid = await axios.get(`https://api.mojang.com/users/profiles/minecraft/${ign}`).then(res => res.data.id);
         } catch (e) {
             console.error(`Unable to retrieve UUID for ${ign} (${e.message}); please set manually`);
         }
@@ -39,6 +43,7 @@ program
             character_id: id,
             ign,
             name: name || ign,
+            uuid,
             socials: {
                 youtube: yt ? yt : undefined,
                 twitch: twitch ? twitch : undefined,
