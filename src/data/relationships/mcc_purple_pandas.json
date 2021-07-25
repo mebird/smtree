@@ -76,5 +76,11 @@
     { "to_id": 78, "from_id": 32, "type": "purple penguins", "smp_id": 2, "season": 1, "part": "MCC13" },
     { "to_id": 45, "from_id": 70, "type": "purple penguins", "smp_id": 2, "season": 1, "part": "MCC13" },
     { "to_id": 45, "from_id": 32, "type": "purple penguins", "smp_id": 2, "season": 1, "part": "MCC13" },
-    { "to_id": 70, "from_id": 32, "type": "purple penguins", "smp_id": 2, "season": 1, "part": "MCC13" }
+    { "to_id": 70, "from_id": 32, "type": "purple penguins", "smp_id": 2, "season": 1, "part": "MCC13" },
+    { "to_id": 57, "from_id": 34, "type": "purple pandas", "smp_id": 2, "season": 2, "part": "MCCP21" },
+    { "to_id": 57, "from_id": 83, "type": "purple pandas", "smp_id": 2, "season": 2, "part": "MCCP21" },
+    { "to_id": 57, "from_id": 21, "type": "purple pandas", "smp_id": 2, "season": 2, "part": "MCCP21" },
+    { "to_id": 34, "from_id": 83, "type": "purple pandas", "smp_id": 2, "season": 2, "part": "MCCP21" },
+    { "to_id": 34, "from_id": 21, "type": "purple pandas", "smp_id": 2, "season": 2, "part": "MCCP21" },
+    { "to_id": 83, "from_id": 21, "type": "purple pandas", "smp_id": 2, "season": 2, "part": "MCCP21" }
 ]

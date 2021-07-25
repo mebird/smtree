@@ -6,22 +6,22 @@ import axios from 'axios';
 import { max } from 'lodash';
 
 const charDir = path.join(__dirname, 'src', 'data', 'characters');
-const mccMetadataDir = path.join(__dirname, 'src', 'metadata', 'mccMetadata');
-const relationshipsDir = path.join(__dirname, 'src', 'relationships');
+const mccMetadataDir = path.join(__dirname, 'src', 'data', 'metadata', 'mccMetadata');
+const relationshipsDir = path.join(__dirname, 'src', 'data', 'relationships');
 
 program
     .command('new <ign> [name]')
     .option('-y, --yt <url>', 'youtube', '')
     .option('-t, --twt <url>', 'twitter', '')
     .option('-j, --twitch <url>', 'twitch', '')
-    .action(async (ign, name) => {
-        const { yt, twt, twitch } = program.opts();
+    .action(async (ign, name, { yt, twt, twitch }) => {
         const characterFilenames = fs.readdirSync(charDir);
 
         // check if there's already a file for this char
         const match = characterFilenames.find(f => f.includes(`_${ign}.json`));
         if (match) {
             console.error(`File already exists for character: ${match}`);
+            return;
         }
 
         // find the max id in use
@@ -94,10 +94,10 @@ mccProgram
     });
 
 mccProgram
-    .command('team <season> <number> <color> <team> [players]')
+    .command('team <season> <number> <color> <team> <players...>')
+    .option('-w, --winners', 'if the given team won or not', false)
     .description('add a mcc team to the data')
-    .action((season, part, color, team) => {
-        const players = program.args.slice(5);
+    .action((season, part, color, team, players: string[], { winners }) => {
         const playerNos: number[] = players.map(v => parseInt(v));
         for (let i = 0; i < playerNos.length; i++) {
             if (isNaN(playerNos[i])) {
@@ -136,13 +136,31 @@ mccProgram
         let teams = [];
         if (!fs.existsSync(teamFilePath)) {
             teams = [];
-            console.info(`Creating ${teamFilePath}...`);
+            console.info(`Creating ${teamFilePath}`);
         } else {
             teams = JSON.parse(fs.readFileSync(teamFilePath, 'utf8'));
-            console.info(`Adding teams to ${teamFilePath}...`);
+            console.info(`Adding teams to ${teamFilePath}`);
         }
         teams.push(...links);
-        fs.writeFileSync(teamFilePath, JSON.stringify(teams));
+        fs.writeFileSync(teamFilePath, JSON.stringify(teams, null, 4));
+
+        if (winners) {
+            console.info('Incrementing wins for winners');
+            const fileNames = fs.readdirSync(mccMetadataDir);
+            const remainingPnos = new Set(playerNos);
+            for (const fn of fileNames) {
+                for (const pNo of remainingPnos.values()) {
+                    if (fn.startsWith(`${pNo}_`)) {
+                        const playerMetadataPath = path.join(mccMetadataDir, fn);
+                        remainingPnos.delete(pNo);
+                        const player = JSON.parse(fs.readFileSync(playerMetadataPath, 'utf8'));
+                        player.wins++;
+                        fs.writeFileSync(playerMetadataPath, JSON.stringify(player, null, 4));
+                        break;
+                    }
+                }
+            }
+        }
     });
 
 program.parse();
