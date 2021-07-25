@@ -36,6 +36,7 @@
     "react-force-graph-2d": "^1.23.8",
     "react-helmet": "^6.1.0",
     "react-swipeable": "^6.1.2",
+    "react-tooltip": "^4.2.21",
     "redux": "^4.1.0"
   },
   "devDependencies": {
@@ -49,13 +50,17 @@
     "@types/react-helmet": "^6.1.2",
     "@types/react-select": "^4.0.17",
     "@types/redux": "^3.6.31",
+    "@typescript-eslint/eslint-plugin": "^4.28.4",
+    "@typescript-eslint/parser": "^4.28.4",
     "babel-loader": "^8.2.2",
     "commander": "^8.0.0",
+    "eslint": "^7.31.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-react": "^7.24.0",
     "gh-pages": "^3.2.3",
     "node-html-parser": "^4.1.0",
     "prettier": "2.3.2",
     "react-is": "^17.0.2",
-    "react-tooltip": "^4.2.21",
     "ts-node": "^10.1.0",
     "typescript": "^4.3.5"
   },

@@ -1,0 +1,27 @@
+{
+    "env": {
+        "browser": true,
+        "es2020": true
+    },
+    "extends": ["plugin:react/recommended", "google"],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "plugins": ["react", "@typescript-eslint"],
+    "rules": {
+        "prefer-const": 2,
+        "curly": 0,
+        "strict-type-predicates": true,
+        "object-literal-sort-keys": false,
+        "interface-name": false,
+        "interface-over-type-literal": false,
+        "no-shadowed-variable": false,
+        "variable-name": false,
+        "member-ordering": false
+    }
+}

@@ -16,17 +16,23 @@ program
     .option('-j, --twitch <url>', 'twitch', '')
     .action(async (ign, name) => {
         const { yt, twt, twitch } = program.opts();
-        const lastCharacterFileName = path.parse(fs.readdirSync(charDir).pop()).base;
-        const lastId = lastCharacterFileName.substring(0, lastCharacterFileName.indexOf('_'));
-        const id = parseInt(lastId) + 1;
+        let lastCharacterFileName = fs.readdirSync(charDir).pop();
+        let lastId = 0;
+        if (lastCharacterFileName) {
+            lastCharacterFileName = path.parse(lastCharacterFileName).base;
+            lastId = parseInt(lastCharacterFileName.substring(0, lastCharacterFileName.indexOf('_')));
+        }
+        const id = lastId + 1;
 
         let uuid = '';
         try {
-            uuid = await axios
+            const res = await axios
                 .get(`https://mcuuid.net/?q=${ign}`)
-                .then(res => parse(res.data).querySelector('#results_id').getAttribute('value'));
+                .then(res => parse(res.data).querySelector('#results_id'));
+            if (!res) throw new Error('No res id field found');
+            uuid = res.getAttribute('value') || '';
         } catch (e) {
-            console.error(`Unable to retrieve UUID for ${ign}; please set manually`);
+            console.error(`Unable to retrieve UUID for ${ign} (${e.message}); please set manually`);
         }
 
         const res = {
@@ -46,34 +52,45 @@ program
         console.info(`Created ${charFilePath}`);
     });
 
-program.command('mcc add <id>').action(id => {
-    const parsedId = parseInt(id);
-    if (isNaN(parsedId)) {
-        console.error(`error: id must be a number (given ${id})`);
-        return;
-    }
+const mccProgram = program.command('mcc');
+mccProgram
+    .command('add <id>')
+    .description('add a player by id to the mcc data')
+    .action(id => {
+        const parsedId = parseInt(id);
+        if (isNaN(parsedId)) {
+            console.error(`error: id must be a number (given ${id})`);
+            return;
+        }
 
-    let charJsonFile = fs.readdirSync(charDir).find(s => s.startsWith(id));
-    if (!charJsonFile) {
-        console.error(`No character exists with id ${id}`);
-        return;
-    }
-    charJsonFile = path.parse(charJsonFile).base;
+        // check if there's a char file
+        let charJsonFile = fs.readdirSync(charDir).find(s => s.startsWith(id));
+        if (!charJsonFile) {
+            console.error(`No character exists with id ${id}`);
+            return;
+        }
+        charJsonFile = path.join(mccMetadataDir, path.parse(charJsonFile).base);
 
-    fs.writeFileSync(
-        path.join(mccMetadataDir, charJsonFile),
-        JSON.stringify({
-            smp_id: 2,
-            character_id: parsedId,
-            wins: 0,
-        })
-    );
-    console.info(`Added ${charJsonFile} to mcc metadata`);
-});
+        // make sure there isn't already a metadata file
+        if (fs.existsSync(charJsonFile)) {
+            console.error(`Metadata file for ${id} already exists`);
+            return;
+        }
 
-program
-    .command('mcc team <season> <number> <color> <team> [players]')
-    .description('output json for an mcc team')
+        fs.writeFileSync(
+            charJsonFile,
+            JSON.stringify({
+                smp_id: 2,
+                character_id: parsedId,
+                wins: 0,
+            })
+        );
+        console.info(`Added ${charJsonFile} to mcc metadata`);
+    });
+
+mccProgram
+    .command('team <season> <number> <color> <team> [players]')
+    .description('add a mcc team to the data')
     .action((season, part, color, team) => {
         const players = program.args.slice(5);
         const playerNos: number[] = players.map(v => parseInt(v));
