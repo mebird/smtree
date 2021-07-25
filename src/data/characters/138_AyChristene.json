@@ -1,1 +1,10 @@
-{"character_id":138,"ign":"AyChristene","name":"AyChristene","uuid":"bbe749b919804a788dd0b8bfa54e9474","socials":{"youtube":"https://www.youtube.com/channel/UC0kRw95ZXrERqDPwQPUvzKQ","twitter":"https://twitter.com/AyChristene"}}
+{
+    "character_id": 138,
+    "ign": "AyChristene",
+    "name": "AyChristene",
+    "uuid": "bbe749b919804a788dd0b8bfa54e9474",
+    "socials": {
+        "youtube": "https://www.youtube.com/channel/UC0kRw95ZXrERqDPwQPUvzKQ",
+        "twitter": "https://twitter.com/AyChristene"
+    }
+}

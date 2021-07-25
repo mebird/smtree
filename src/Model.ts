@@ -70,7 +70,7 @@ export interface Relationship {
     to?: Partial<Character>;
     from?: Partial<Character>;
     note?: string;
-    season?: number;
+    season?: string;
     part?: string;
 }
 
