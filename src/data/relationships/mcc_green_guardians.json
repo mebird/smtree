@@ -628,7 +628,7 @@
         "from_id": 133,
         "type": "green guardians",
         "smp_id": 2,
-        "season": 2,
+        "season": "special",
         "part": "MCCP21"
     },
     {
@@ -636,7 +636,7 @@
         "from_id": 134,
         "type": "green guardians",
         "smp_id": 2,
-        "season": 2,
+        "season": "special",
         "part": "MCCP21"
     },
     {
@@ -644,7 +644,7 @@
         "from_id": 135,
         "type": "green guardians",
         "smp_id": 2,
-        "season": 2,
+        "season": "special",
         "part": "MCCP21"
     },
     {
@@ -652,7 +652,7 @@
         "from_id": 134,
         "type": "green guardians",
         "smp_id": 2,
-        "season": 2,
+        "season": "special",
         "part": "MCCP21"
     },
     {
@@ -660,7 +660,7 @@
         "from_id": 135,
         "type": "green guardians",
         "smp_id": 2,
-        "season": 2,
+        "season": "special",
         "part": "MCCP21"
     },
     {
@@ -668,7 +668,7 @@
         "from_id": 135,
         "type": "green guardians",
         "smp_id": 2,
-        "season": 2,
+        "season": "special",
         "part": "MCCP21"
     }
 ]

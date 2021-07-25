@@ -628,7 +628,7 @@
         "from_id": 2,
         "type": "pink parrots",
         "smp_id": 2,
-        "season": 2,
+        "season": "special",
         "part": "MCCP21"
     },
     {
@@ -636,7 +636,7 @@
         "from_id": 11,
         "type": "pink parrots",
         "smp_id": 2,
-        "season": 2,
+        "season": "special",
         "part": "MCCP21"
     },
     {
@@ -644,7 +644,7 @@
         "from_id": 80,
         "type": "pink parrots",
         "smp_id": 2,
-        "season": 2,
+        "season": "special",
         "part": "MCCP21"
     },
     {
@@ -652,7 +652,7 @@
         "from_id": 12,
         "type": "pink parrots",
         "smp_id": 2,
-        "season": 2,
+        "season": "special",
         "part": "MCCP21"
     },
     {
@@ -660,7 +660,7 @@
         "from_id": 11,
         "type": "pink parrots",
         "smp_id": 2,
-        "season": 2,
+        "season": "special",
         "part": "MCCP21"
     },
     {
@@ -668,7 +668,7 @@
         "from_id": 80,
         "type": "pink parrots",
         "smp_id": 2,
-        "season": 2,
+        "season": "special",
         "part": "MCCP21"
     },
     {
@@ -676,7 +676,7 @@
         "from_id": 12,
         "type": "pink parrots",
         "smp_id": 2,
-        "season": 2,
+        "season": "special",
         "part": "MCCP21"
     },
     {
@@ -684,7 +684,7 @@
         "from_id": 80,
         "type": "pink parrots",
         "smp_id": 2,
-        "season": 2,
+        "season": "special",
         "part": "MCCP21"
     },
     {
@@ -692,7 +692,7 @@
         "from_id": 12,
         "type": "pink parrots",
         "smp_id": 2,
-        "season": 2,
+        "season": "special",
         "part": "MCCP21"
     },
     {
@@ -700,7 +700,7 @@
         "from_id": 12,
         "type": "pink parrots",
         "smp_id": 2,
-        "season": 2,
+        "season": "special",
         "part": "MCCP21"
     }
 ]

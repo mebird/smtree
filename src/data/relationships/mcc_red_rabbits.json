@@ -77,10 +77,10 @@
     { "to_id": 70, "from_id": 55, "type": "krimson krakens", "smp_id": 2, "season": 1, "part": "MCC7" },
     { "to_id": 70, "from_id": 43, "type": "krimson krakens", "smp_id": 2, "season": 1, "part": "MCC7" },
     { "to_id": 55, "from_id": 43, "type": "krimson krakens", "smp_id": 2, "season": 1, "part": "MCC7" },
-    { "to_id": 94, "from_id": 67, "type": "red rabbits", "smp_id": 2, "season": 2, "part": "MCC P21" },
-    { "to_id": 94, "from_id": 29, "type": "red rabbits", "smp_id": 2, "season": 2, "part": "MCC P21" },
-    { "to_id": 94, "from_id": 30, "type": "red rabbits", "smp_id": 2, "season": 2, "part": "MCC P21" },
-    { "to_id": 67, "from_id": 29, "type": "red rabbits", "smp_id": 2, "season": 2, "part": "MCC P21" },
-    { "to_id": 67, "from_id": 30, "type": "red rabbits", "smp_id": 2, "season": 2, "part": "MCC P21" },
-    { "to_id": 29, "from_id": 30, "type": "red rabbits", "smp_id": 2, "season": 2, "part": "MCC P21" }
+    { "to_id": 94, "from_id": 67, "type": "red rabbits", "smp_id": 2, "season": "special", "part": "MCC P21" },
+    { "to_id": 94, "from_id": 29, "type": "red rabbits", "smp_id": 2, "season": "special", "part": "MCC P21" },
+    { "to_id": 94, "from_id": 30, "type": "red rabbits", "smp_id": 2, "season": "special", "part": "MCC P21" },
+    { "to_id": 67, "from_id": 29, "type": "red rabbits", "smp_id": 2, "season": "special", "part": "MCC P21" },
+    { "to_id": 67, "from_id": 30, "type": "red rabbits", "smp_id": 2, "season": "special", "part": "MCC P21" },
+    { "to_id": 29, "from_id": 30, "type": "red rabbits", "smp_id": 2, "season": "special", "part": "MCC P21" }
 ]
