@@ -99,7 +99,7 @@ export const createNodes = (characters: CharacterWithContext[], relationships: R
 };
 
 const buildLabel = ({ note, season, part = '', type }: Relationship) =>
-    `${season ? `S${season} | ` : ''}${part ? `${part} | ` : ''}${type}${note ? ` (${note})` : ''}`;
+    `${season ? `${season} | ` : ''}${part ? `${part} | ` : ''}${type}${note ? ` (${note})` : ''}`;
 
 const isOverlapping = (l1: Link, l2: Link) =>
     (l1.from_id === l2.from_id || l1.from_id === l2.to_id) && (l1.to_id === l2.from_id || l1.to_id === l2.to_id);

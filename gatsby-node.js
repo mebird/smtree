@@ -1,21 +1,49 @@
-const crafatar = 'https://crafatar.com';
+const { default: axios } = require('axios');
+const axiosRetry = require('axios-retry');
+const fs = require('fs');
+const path = require('path');
+
 const defaultUUID = '8667ba71-b85a-4004-af54-457a9734eed7';
+const staticFolder = path.join(__dirname, 'static');
+
+const getCrafatarUrl = (type, uuid) => {
+    switch (type) {
+        case 'head':
+            return `https://crafatar.com/avatars/${uuid}?overlay&size=512`;
+        case 'body':
+            return `https://crafatar.com/renders/body/${uuid}?overlay&scale=10`;
+    }
+};
+
+const getMcHeadsUrl = (type, uuid) => {
+    uuid = uuid.replace('-', '');
+    switch (type) {
+        case 'head':
+            return `https://mc-heads.net/avatar/${uuid}/512.png`;
+        case 'body':
+            return `https://mc-heads.net/body/${uuid}/right`;
+    }
+};
 
 // Append image URLs onto each character to grab w/remote-images plugin
-exports.onCreateNode = ({ node, actions }) => {
+exports.onCreateNode = async ({ node, actions }) => {
     if (node.internal.type !== 'CharacterData') return;
     const { createNodeField } = actions;
+    const uuid = node.uuid || defaultUUID;
+    // we want to download & cache images in our static folder on this step
+    //  because otherwise we load so many images from crafatar that we run into 503s
+    //  and, as a result, the graph bugs tf out
 
     createNodeField({
         node,
         name: 'headSrc',
-        value: `${crafatar}/avatars/${node.uuid || defaultUUID}?overlay&size=512`,
+        value: getMcHeadsUrl('head', uuid),
     });
 
     createNodeField({
         node,
         name: 'bodySrc',
-        value: `${crafatar}/renders/body/${node.uuid || defaultUUID}?overlay&scale=10`,
+        value: getMcHeadsUrl('body', uuid),
     });
 };
 
