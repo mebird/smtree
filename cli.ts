@@ -57,41 +57,41 @@ program
         console.info(`Created ${charFilePath}`);
     });
 
+const addToMcc = (id: any) => {
+    const parsedId = parseInt(id);
+    if (isNaN(parsedId)) {
+        console.error(`error: id must be a number (given ${id})`);
+        return;
+    }
+
+    // check if there's a char file
+    let charJsonFile = fs.readdirSync(charDir).find(s => s.startsWith(id));
+    if (!charJsonFile) {
+        console.error(`No character exists with id ${id}`);
+        return;
+    }
+    charJsonFile = path.join(mccMetadataDir, path.parse(charJsonFile).base);
+
+    // make sure there isn't already a metadata file
+    if (fs.existsSync(charJsonFile)) {
+        console.error(`Metadata file for ${id} already exists`);
+        return;
+    }
+
+    fs.writeFileSync(
+        charJsonFile,
+        JSON.stringify({
+            smp_id: 2,
+            character_id: parsedId,
+            wins: 0,
+        })
+    );
+    console.info(`Added ${charJsonFile} to mcc metadata`);
+};
+
 const mccProgram = program.command('mcc');
-mccProgram
-    .command('add <id>')
-    .description('add a player by id to the mcc data')
-    .action(id => {
-        const parsedId = parseInt(id);
-        if (isNaN(parsedId)) {
-            console.error(`error: id must be a number (given ${id})`);
-            return;
-        }
 
-        // check if there's a char file
-        let charJsonFile = fs.readdirSync(charDir).find(s => s.startsWith(id));
-        if (!charJsonFile) {
-            console.error(`No character exists with id ${id}`);
-            return;
-        }
-        charJsonFile = path.join(mccMetadataDir, path.parse(charJsonFile).base);
-
-        // make sure there isn't already a metadata file
-        if (fs.existsSync(charJsonFile)) {
-            console.error(`Metadata file for ${id} already exists`);
-            return;
-        }
-
-        fs.writeFileSync(
-            charJsonFile,
-            JSON.stringify({
-                smp_id: 2,
-                character_id: parsedId,
-                wins: 0,
-            })
-        );
-        console.info(`Added ${charJsonFile} to mcc metadata`);
-    });
+mccProgram.command('add <id>').description('add a player by id to the mcc data').action(addToMcc);
 
 mccProgram
     .command('team <season> <number> <color> <team> <players...>')
@@ -158,6 +158,14 @@ mccProgram
         }
     });
 
+const upsertMetadata = (presentPlayers: Set<number>, id: number, insert: (id: number) => void) => {
+    if (!presentPlayers.has(id)) {
+        console.error(`Player ${id} missing from metadata files; backfilling`);
+        insert(id);
+        presentPlayers.add(id);
+    }
+};
+
 mccProgram.command('validate').action(() => {
     // Get all metadata
     const mccMetadataFileNames = fs.readdirSync(mccMetadataDir);
@@ -190,7 +198,7 @@ mccProgram.command('validate').action(() => {
         }
     }
 
-    // Validate all relationships
+    // Validate all relationships & upsert any missing records
     const mccRelationshipFileNames = fs.readdirSync(relationshipsDir).filter(fn => fn.startsWith('mcc_'));
     for (const mccRelationshipFileName of mccRelationshipFileNames) {
         const relationships = JSON.parse(fs.readFileSync(path.join(relationshipsDir, mccRelationshipFileName), 'utf8'));
@@ -207,14 +215,8 @@ mccProgram.command('validate').action(() => {
                 return;
             }
 
-            if (!playerNos.has(to_id) || !playerNos.has(from_id)) {
-                console.error(
-                    `Player referenced in relationship missing from metadata files`,
-                    mccRelationshipFileName,
-                    JSON.stringify(relationship)
-                );
-                return;
-            }
+            upsertMetadata(playerNos, to_id, addToMcc);
+            upsertMetadata(playerNos, from_id, addToMcc);
 
             if (!Object.values(RelationshipType).includes(type)) {
                 console.error(`error: invalid team name (${type})`);
