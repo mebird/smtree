@@ -766,5 +766,53 @@
         "smp_id": 2,
         "season": "2",
         "part": "MCC15"
+    },
+    {
+        "to_id": 166,
+        "from_id": 167,
+        "type": "power bottoms",
+        "smp_id": 2,
+        "season": "special",
+        "part": "MCCJJ"
+    },
+    {
+        "to_id": 166,
+        "from_id": 168,
+        "type": "power bottoms",
+        "smp_id": 2,
+        "season": "special",
+        "part": "MCCJJ"
+    },
+    {
+        "to_id": 166,
+        "from_id": 81,
+        "type": "power bottoms",
+        "smp_id": 2,
+        "season": "special",
+        "part": "MCCJJ"
+    },
+    {
+        "to_id": 167,
+        "from_id": 168,
+        "type": "power bottoms",
+        "smp_id": 2,
+        "season": "special",
+        "part": "MCCJJ"
+    },
+    {
+        "to_id": 167,
+        "from_id": 81,
+        "type": "power bottoms",
+        "smp_id": 2,
+        "season": "special",
+        "part": "MCCJJ"
+    },
+    {
+        "to_id": 168,
+        "from_id": 81,
+        "type": "power bottoms",
+        "smp_id": 2,
+        "season": "special",
+        "part": "MCCJJ"
     }
 ]

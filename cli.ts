@@ -1,9 +1,11 @@
 import { program } from 'commander';
-import { Relationship, RelationshipType } from './src/Model';
+import { Relationship, RelationshipType, Socials } from './src/Model';
 import fs from 'fs';
 import path from 'path';
+import prompt from 'prompt';
 import axios from 'axios';
 import { isString, max } from 'lodash';
+import { resolve } from 'q';
 
 const charDir = path.join(__dirname, 'src', 'data', 'characters');
 const mccMetadataDir = path.join(__dirname, 'src', 'data', 'metadata', 'mccMetadata');
@@ -11,10 +13,8 @@ const relationshipsDir = path.join(__dirname, 'src', 'data', 'relationships');
 
 program
     .command('new <ign> [name]')
-    .option('-y, --yt <url>', 'youtube', '')
-    .option('-t, --twt <url>', 'twitter', '')
-    .option('-j, --twitch <url>', 'twitch', '')
-    .action(async (ign, name, { yt, twt, twitch }) => {
+    .option('-s, --socials', 'prompt for socials')
+    .action(async (ign, name, { socials: promptForSocials }) => {
         const characterFilenames = fs.readdirSync(charDir);
 
         // check if there's already a file for this char
@@ -31,6 +31,20 @@ program
         });
         const id = (max(takenIds) || -1) + 1;
 
+        // get socials
+        const socials: Record<string, string> = {};
+        const socialPrompts: (keyof Socials)[] = ['youtube', 'twitch', 'twitter', 'instagram'];
+        if (promptForSocials) {
+            prompt.message = '';
+            prompt.start();
+            const res: Record<string, string> = await prompt.get(socialPrompts);
+            Object.keys(res).forEach(k => {
+                if (res[k]) {
+                    socials[k] = res[k];
+                }
+            });
+        }
+
         // get mc uuid
         let uuid = '';
         try {
@@ -44,11 +58,7 @@ program
             ign,
             name: name || ign,
             uuid,
-            socials: {
-                youtube: yt ? yt : undefined,
-                twitch: twitch ? twitch : undefined,
-                twitter: twt ? twt : undefined,
-            },
+            socials,
         };
 
         const charFilePath = path.join(charDir, `${id}_${ign}.json`);
@@ -57,47 +67,52 @@ program
         console.info(`Created ${charFilePath}`);
     });
 
-const addToMcc = (id: any) => {
+// adds an mcc data file; returns true on success and false on failure
+const addToMcc = (id: any): boolean => {
     const parsedId = parseInt(id);
     if (isNaN(parsedId)) {
         console.error(`error: id must be a number (given ${id})`);
-        return;
+        return false;
     }
 
     // check if there's a char file
     let charJsonFile = fs.readdirSync(charDir).find(s => s.startsWith(id));
     if (!charJsonFile) {
         console.error(`No character exists with id ${id}`);
-        return;
+        return false;
     }
     charJsonFile = path.join(mccMetadataDir, path.parse(charJsonFile).base);
 
     // make sure there isn't already a metadata file
-    if (fs.existsSync(charJsonFile)) {
-        console.error(`Metadata file for ${id} already exists`);
-        return;
+    if (!fs.existsSync(charJsonFile)) {
+        fs.writeFileSync(
+            charJsonFile,
+            JSON.stringify({
+                smp_id: 2,
+                character_id: parsedId,
+                wins: 0,
+            })
+        );
+        console.info(`Added ${charJsonFile} to mcc metadata`);
     }
-
-    fs.writeFileSync(
-        charJsonFile,
-        JSON.stringify({
-            smp_id: 2,
-            character_id: parsedId,
-            wins: 0,
-        })
-    );
-    console.info(`Added ${charJsonFile} to mcc metadata`);
+    return true;
 };
 
 const mccProgram = program.command('mcc');
 
-mccProgram.command('add <id>').description('add a player by id to the mcc data').action(addToMcc);
+mccProgram
+    .command('add <id>')
+    .description('add a player by id to the mcc data')
+    .action(id => {
+        addToMcc(id);
+    });
 
 mccProgram
-    .command('team <season> <number> <color> <team> <players...>')
+    .command('team <season> <number> <team> <players...>')
     .option('-w, --winners', 'if the given team won or not', false)
+    .option('-o, --output_team <file>', 'the output team file (if not the default team)')
     .description('add a mcc team to the data')
-    .action((season, part, color, team, players: string[], { winners }) => {
+    .action((season, part, team, players: string[], { winners, output_team }) => {
         const playerNos: number[] = players.map(v => parseInt(v));
         for (let i = 0; i < playerNos.length; i++) {
             if (isNaN(playerNos[i])) {
@@ -106,9 +121,14 @@ mccProgram
             }
         }
 
-        const type = `${color} ${team}`.toLowerCase() as RelationshipType;
+        const type = team.toLowerCase() as RelationshipType;
         if (!Object.values(RelationshipType).includes(type)) {
             console.error(`error: invalid team name (${type})`);
+            return;
+        }
+
+        console.info('Ensuring all players have a metadata file & char files');
+        if (playerNos.some(n => !addToMcc(n))) {
             return;
         }
 
@@ -127,7 +147,13 @@ mccProgram
         }
         console.info(JSON.stringify(links));
 
-        const teamFilePath = path.join(relationshipsDir, `mcc_${type.replace(' ', '_')}.json`);
+        const outputTeam = output_team.toLowerCase() || type;
+        if (!Object.values(RelationshipType).includes(outputTeam)) {
+            console.error(`error: invalid output team name (${outputTeam})`);
+            return;
+        }
+
+        const teamFilePath = path.join(relationshipsDir, `mcc_${outputTeam.replace(' ', '_')}.json`);
         let teams = [];
         if (!fs.existsSync(teamFilePath)) {
             teams = [];
@@ -158,12 +184,13 @@ mccProgram
         }
     });
 
-const upsertMetadata = (presentPlayers: Set<number>, id: number, insert: (id: number) => void) => {
+const upsertMetadata = (presentPlayers: Set<number>, id: number, insert: (id: number) => boolean): boolean => {
     if (!presentPlayers.has(id)) {
-        console.error(`Player ${id} missing from metadata files; backfilling`);
-        insert(id);
+        console.error(`Player ${id} missing from metadata files; adding`);
         presentPlayers.add(id);
+        return insert(id);
     }
+    return true;
 };
 
 mccProgram.command('validate').action(() => {
@@ -215,8 +242,8 @@ mccProgram.command('validate').action(() => {
                 return;
             }
 
-            upsertMetadata(playerNos, to_id, addToMcc);
-            upsertMetadata(playerNos, from_id, addToMcc);
+            if (!upsertMetadata(playerNos, to_id, addToMcc)) return;
+            if (!upsertMetadata(playerNos, from_id, addToMcc)) return;
 
             if (!Object.values(RelationshipType).includes(type)) {
                 console.error(`error: invalid team name (${type})`);

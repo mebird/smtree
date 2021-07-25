@@ -766,5 +766,53 @@
         "smp_id": 2,
         "season": "2",
         "part": "MCC15"
+    },
+    {
+        "to_id": 142,
+        "from_id": 141,
+        "type": "simon's angels",
+        "smp_id": 2,
+        "season": "special",
+        "part": "MCCJJ"
+    },
+    {
+        "to_id": 142,
+        "from_id": 66,
+        "type": "simon's angels",
+        "smp_id": 2,
+        "season": "special",
+        "part": "MCCJJ"
+    },
+    {
+        "to_id": 142,
+        "from_id": 80,
+        "type": "simon's angels",
+        "smp_id": 2,
+        "season": "special",
+        "part": "MCCJJ"
+    },
+    {
+        "to_id": 141,
+        "from_id": 66,
+        "type": "simon's angels",
+        "smp_id": 2,
+        "season": "special",
+        "part": "MCCJJ"
+    },
+    {
+        "to_id": 141,
+        "from_id": 80,
+        "type": "simon's angels",
+        "smp_id": 2,
+        "season": "special",
+        "part": "MCCJJ"
+    },
+    {
+        "to_id": 66,
+        "from_id": 80,
+        "type": "simon's angels",
+        "smp_id": 2,
+        "season": "special",
+        "part": "MCCJJ"
     }
 ]

@@ -44,6 +44,7 @@
     "@types/commander": "^2.12.2",
     "@types/lodash": "^4.14.171",
     "@types/node": "^16.4.2",
+    "@types/prompt": "^1.1.1",
     "@types/react": "^17.0.15",
     "@types/react-custom-scrollbars": "^4.0.8",
     "@types/react-dom": "^17.0.9",
@@ -60,6 +61,7 @@
     "eslint-plugin-react": "^7.24.0",
     "gh-pages": "^3.2.3",
     "prettier": "2.3.2",
+    "prompt": "^1.1.0",
     "react-is": "^17.0.2",
     "ts-node": "^10.1.0",
     "typescript": "^4.3.5"
