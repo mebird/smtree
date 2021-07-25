@@ -3,7 +3,7 @@ import { Relationship, RelationshipType } from './src/Model';
 import fs from 'fs';
 import path from 'path';
 import axios from 'axios';
-import { max } from 'lodash';
+import { isString, max } from 'lodash';
 
 const charDir = path.join(__dirname, 'src', 'data', 'characters');
 const mccMetadataDir = path.join(__dirname, 'src', 'data', 'metadata', 'mccMetadata');
@@ -106,11 +106,6 @@ mccProgram
             }
         }
 
-        if (isNaN(parseInt(season))) {
-            console.error(`error: season must be a number (given ${season})`);
-            return;
-        }
-
         const type = `${color} ${team}`.toLowerCase() as RelationshipType;
         if (!Object.values(RelationshipType).includes(type)) {
             console.error(`error: invalid team name (${type})`);
@@ -125,7 +120,7 @@ mccProgram
                     from_id: playerNos[j],
                     type,
                     smp_id: 2,
-                    season: parseInt(season),
+                    season,
                     part: `MCC${part}`,
                 });
             }
@@ -162,5 +157,71 @@ mccProgram
             }
         }
     });
+
+mccProgram.command('validate').action(() => {
+    // Get all metadata
+    const mccMetadataFileNames = fs.readdirSync(mccMetadataDir);
+
+    // For each in the metadata, add their id to the participants and validate things match
+    const playerNos = new Set<number>();
+    for (const playerFileName of mccMetadataFileNames) {
+        const id = parseInt(playerFileName.substring(0, playerFileName.indexOf('_')));
+        playerNos.add(id);
+        if (isNaN(id)) {
+            console.error(`Invalid metadata file name: ${playerFileName}`);
+        }
+
+        const characterFilePath = path.join(charDir, playerFileName);
+        const metadataFilePath = path.join(mccMetadataDir, playerFileName);
+        if (!fs.existsSync(characterFilePath)) {
+            console.error(`No character file, but given metadata file: ${playerFileName}`);
+            return;
+        }
+
+        const characterJson = JSON.parse(fs.readFileSync(characterFilePath, 'utf8'));
+        const metadataJson = JSON.parse(fs.readFileSync(characterFilePath, 'utf8'));
+        if (metadataJson.character_id != id) {
+            console.error(`Mismatched file and char ids: ${metadataFilePath}`);
+            return;
+        }
+        if (characterJson.character_id != id) {
+            console.error(`Mismatched file and char ids: ${metadataFilePath}`);
+            return;
+        }
+    }
+
+    // Validate all relationships
+    const mccRelationshipFileNames = fs.readdirSync(relationshipsDir).filter(fn => fn.startsWith('mcc_'));
+    for (const mccRelationshipFileName of mccRelationshipFileNames) {
+        const relationships = JSON.parse(fs.readFileSync(path.join(relationshipsDir, mccRelationshipFileName), 'utf8'));
+        for (const relationship of relationships) {
+            const { to_id, from_id, type, smp_id, season } = relationship;
+
+            if (!season || !isString(season)) {
+                console.error(`Invalid season`, mccRelationshipFileName, JSON.stringify(relationship));
+                return;
+            }
+
+            if (smp_id != 2) {
+                console.error(`SMP ID is not equal to 2`, mccRelationshipFileName, JSON.stringify(relationship));
+                return;
+            }
+
+            if (!playerNos.has(to_id) || !playerNos.has(from_id)) {
+                console.error(
+                    `Player referenced in relationship missing from metadata files`,
+                    mccRelationshipFileName,
+                    JSON.stringify(relationship)
+                );
+                return;
+            }
+
+            if (!Object.values(RelationshipType).includes(type)) {
+                console.error(`error: invalid team name (${type})`);
+                return;
+            }
+        }
+    }
+});
 
 program.parse();
