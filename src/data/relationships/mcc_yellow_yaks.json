@@ -1,0 +1,50 @@
+[
+    {
+        "to_id": 93,
+        "from_id": 52,
+        "type": "yellow yaks",
+        "smp_id": 2,
+        "season": 2,
+        "part": "MCC14"
+    },
+    {
+        "to_id": 93,
+        "from_id": 50,
+        "type": "yellow yaks",
+        "smp_id": 2,
+        "season": 2,
+        "part": "MCC14"
+    },
+    {
+        "to_id": 93,
+        "from_id": 43,
+        "type": "yellow yaks",
+        "smp_id": 2,
+        "season": 2,
+        "part": "MCC14"
+    },
+    {
+        "to_id": 52,
+        "from_id": 50,
+        "type": "yellow yaks",
+        "smp_id": 2,
+        "season": 2,
+        "part": "MCC14"
+    },
+    {
+        "to_id": 52,
+        "from_id": 43,
+        "type": "yellow yaks",
+        "smp_id": 2,
+        "season": 2,
+        "part": "MCC14"
+    },
+    {
+        "to_id": 50,
+        "from_id": 43,
+        "type": "yellow yaks",
+        "smp_id": 2,
+        "season": 2,
+        "part": "MCC14"
+    }
+]

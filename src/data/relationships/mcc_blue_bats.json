@@ -670,5 +670,53 @@
         "smp_id": 2,
         "season": "special",
         "part": "MCCP21"
+    },
+    {
+        "to_id": 37,
+        "from_id": 17,
+        "type": "blue bats",
+        "smp_id": 2,
+        "season": 2,
+        "part": "MCCP21"
+    },
+    {
+        "to_id": 37,
+        "from_id": 85,
+        "type": "blue bats",
+        "smp_id": 2,
+        "season": 2,
+        "part": "MCCP21"
+    },
+    {
+        "to_id": 37,
+        "from_id": 6,
+        "type": "blue bats",
+        "smp_id": 2,
+        "season": 2,
+        "part": "MCCP21"
+    },
+    {
+        "to_id": 17,
+        "from_id": 85,
+        "type": "blue bats",
+        "smp_id": 2,
+        "season": 2,
+        "part": "MCCP21"
+    },
+    {
+        "to_id": 17,
+        "from_id": 6,
+        "type": "blue bats",
+        "smp_id": 2,
+        "season": 2,
+        "part": "MCCP21"
+    },
+    {
+        "to_id": 85,
+        "from_id": 6,
+        "type": "blue bats",
+        "smp_id": 2,
+        "season": 2,
+        "part": "MCCP21"
     }
 ]
