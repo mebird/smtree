@@ -814,5 +814,101 @@
         "smp_id": 2,
         "season": "special",
         "part": "MCCJJ"
+    },
+    {
+        "to_id": 101,
+        "from_id": 102,
+        "type": "blue bats",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC16"
+    },
+    {
+        "to_id": 101,
+        "from_id": 105,
+        "type": "blue bats",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC16"
+    },
+    {
+        "to_id": 101,
+        "from_id": 89,
+        "type": "blue bats",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC16"
+    },
+    {
+        "to_id": 102,
+        "from_id": 105,
+        "type": "blue bats",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC16"
+    },
+    {
+        "to_id": 102,
+        "from_id": 89,
+        "type": "blue bats",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC16"
+    },
+    {
+        "to_id": 105,
+        "from_id": 89,
+        "type": "blue bats",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC16"
+    },
+    {
+        "to_id": 12,
+        "from_id": 178,
+        "type": "blue bats",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC17"
+    },
+    {
+        "to_id": 12,
+        "from_id": 83,
+        "type": "blue bats",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC17"
+    },
+    {
+        "to_id": 12,
+        "from_id": 48,
+        "type": "blue bats",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC17"
+    },
+    {
+        "to_id": 178,
+        "from_id": 83,
+        "type": "blue bats",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC17"
+    },
+    {
+        "to_id": 178,
+        "from_id": 48,
+        "type": "blue bats",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC17"
+    },
+    {
+        "to_id": 83,
+        "from_id": 48,
+        "type": "blue bats",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC17"
     }
 ]

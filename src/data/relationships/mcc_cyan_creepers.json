@@ -814,5 +814,101 @@
         "smp_id": 2,
         "season": "special",
         "part": "MCCJJ"
+    },
+    {
+        "to_id": 75,
+        "from_id": 32,
+        "type": "cyan creepers",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC16"
+    },
+    {
+        "to_id": 75,
+        "from_id": 140,
+        "type": "cyan creepers",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC16"
+    },
+    {
+        "to_id": 75,
+        "from_id": 56,
+        "type": "cyan creepers",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC16"
+    },
+    {
+        "to_id": 32,
+        "from_id": 140,
+        "type": "cyan creepers",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC16"
+    },
+    {
+        "to_id": 32,
+        "from_id": 56,
+        "type": "cyan creepers",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC16"
+    },
+    {
+        "to_id": 140,
+        "from_id": 56,
+        "type": "cyan creepers",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC16"
+    },
+    {
+        "to_id": 25,
+        "from_id": 4,
+        "type": "cyan coyotes",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC17"
+    },
+    {
+        "to_id": 25,
+        "from_id": 14,
+        "type": "cyan coyotes",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC17"
+    },
+    {
+        "to_id": 25,
+        "from_id": 10,
+        "type": "cyan coyotes",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC17"
+    },
+    {
+        "to_id": 4,
+        "from_id": 14,
+        "type": "cyan coyotes",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC17"
+    },
+    {
+        "to_id": 4,
+        "from_id": 10,
+        "type": "cyan coyotes",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC17"
+    },
+    {
+        "to_id": 14,
+        "from_id": 10,
+        "type": "cyan coyotes",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC17"
     }
 ]

@@ -43,10 +43,12 @@ export enum RelationshipType {
     GRN_GUARDIANS = 'green guardians',
     EMRD_ELVES = 'emerald elves',
     GBLNS = 'the goblins',
+    GREEN_GECKOS = 'green geckos',
 
     CYN_CREEPERS = 'cyan creepers',
     CYN_CNDY_CNS = 'cyan candy canes',
     NOT_THE_RED_TM = 'not the red team',
+    CYN_COYOTES = 'cyan coyotes',
 
     AQUA_HORSES = 'aqua horses',
     AQUA_AXOLOTLS = 'aqua axolotls',

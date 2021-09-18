@@ -1,6 +1,8 @@
 {
     "smp_id": 2,
     "character_id": 32,
-    "wins": 3,
-    "factions": ["the green gods"]
+    "wins": 4,
+    "factions": [
+        "the green gods"
+    ]
 }

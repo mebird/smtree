@@ -96,10 +96,12 @@ export const getLinkColor = (l: Link) => {
         case RelationshipType.GRN_GUARDIANS:
         case RelationshipType.EMRD_ELVES:
         case RelationshipType.GBLNS:
+        case RelationshipType.GREEN_GECKOS:
             return '#225E0A';
         case RelationshipType.CYN_CREEPERS:
         case RelationshipType.CYN_CNDY_CNS:
         case RelationshipType.NOT_THE_RED_TM:
+        case RelationshipType.CYN_COYOTES:
             return '#006562';
         case RelationshipType.AQUA_ABOMINATIONS:
         case RelationshipType.AQUA_AXOLOTLS:

@@ -814,5 +814,101 @@
         "smp_id": 2,
         "season": "special",
         "part": "MCCJJ"
+    },
+    {
+        "to_id": 90,
+        "from_id": 81,
+        "type": "green guardians",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC16"
+    },
+    {
+        "to_id": 90,
+        "from_id": 93,
+        "type": "green guardians",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC16"
+    },
+    {
+        "to_id": 90,
+        "from_id": 6,
+        "type": "green guardians",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC16"
+    },
+    {
+        "to_id": 81,
+        "from_id": 93,
+        "type": "green guardians",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC16"
+    },
+    {
+        "to_id": 81,
+        "from_id": 6,
+        "type": "green guardians",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC16"
+    },
+    {
+        "to_id": 93,
+        "from_id": 6,
+        "type": "green guardians",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC16"
+    },
+    {
+        "to_id": 139,
+        "from_id": 22,
+        "type": "green geckos",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC17"
+    },
+    {
+        "to_id": 139,
+        "from_id": 23,
+        "type": "green geckos",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC17"
+    },
+    {
+        "to_id": 139,
+        "from_id": 17,
+        "type": "green geckos",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC17"
+    },
+    {
+        "to_id": 22,
+        "from_id": 23,
+        "type": "green geckos",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC17"
+    },
+    {
+        "to_id": 22,
+        "from_id": 17,
+        "type": "green geckos",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC17"
+    },
+    {
+        "to_id": 23,
+        "from_id": 17,
+        "type": "green geckos",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC17"
     }
 ]

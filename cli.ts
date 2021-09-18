@@ -76,7 +76,7 @@ const addToMcc = (id: any): boolean => {
     }
 
     // check if there's a char file
-    let charJsonFile = fs.readdirSync(charDir).find(s => s.startsWith(id));
+    let charJsonFile = fs.readdirSync(charDir).find(s => s.startsWith(`${id}_`));
     if (!charJsonFile) {
         console.error(`No character exists with id ${id}`);
         return false;
@@ -94,6 +94,8 @@ const addToMcc = (id: any): boolean => {
             })
         );
         console.info(`Added ${charJsonFile} to mcc metadata`);
+    } else {
+        console.info(`Metadata file for ${id} already exists`);
     }
     return true;
 };
@@ -147,7 +149,7 @@ mccProgram
         }
         console.info(JSON.stringify(links));
 
-        const outputTeam = output_team.toLowerCase() || type;
+        const outputTeam = output_team ? output_team.toLowerCase() : type;
         if (!Object.values(RelationshipType).includes(outputTeam)) {
             console.error(`error: invalid output team name (${outputTeam})`);
             return;
