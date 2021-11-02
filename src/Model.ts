@@ -37,7 +37,7 @@ export enum RelationshipType {
     RA_SHORTS = "rick astley's shorts",
 
     LIME_LLAMAS = 'lime llamas',
-    LIME_LICHES = 'lime  liches',
+    LIME_LICHES = 'lime liches',
     MNT_MISTLETOES = 'mint mistletoes',
     DODGY_DOODLERS = 'dodgy doodlers',
 
