@@ -942,5 +942,53 @@
         "smp_id": 2,
         "season": "2",
         "part": "MCC17"
+    },
+    {
+        "to_id": 4,
+        "from_id": 8,
+        "type": "fuchsia frankensteins",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC18"
+    },
+    {
+        "to_id": 4,
+        "from_id": 24,
+        "type": "fuchsia frankensteins",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC18"
+    },
+    {
+        "to_id": 4,
+        "from_id": 5,
+        "type": "fuchsia frankensteins",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC18"
+    },
+    {
+        "to_id": 8,
+        "from_id": 24,
+        "type": "fuchsia frankensteins",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC18"
+    },
+    {
+        "to_id": 8,
+        "from_id": 5,
+        "type": "fuchsia frankensteins",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC18"
+    },
+    {
+        "to_id": 24,
+        "from_id": 5,
+        "type": "fuchsia frankensteins",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC18"
     }
 ]

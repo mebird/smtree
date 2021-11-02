@@ -910,5 +910,53 @@
         "smp_id": 2,
         "season": "2",
         "part": "MCC17"
+    },
+    {
+        "to_id": 45,
+        "from_id": 23,
+        "type": "green goblins",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC18"
+    },
+    {
+        "to_id": 45,
+        "from_id": 26,
+        "type": "green goblins",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC18"
+    },
+    {
+        "to_id": 45,
+        "from_id": 177,
+        "type": "green goblins",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC18"
+    },
+    {
+        "to_id": 23,
+        "from_id": 26,
+        "type": "green goblins",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC18"
+    },
+    {
+        "to_id": 23,
+        "from_id": 177,
+        "type": "green goblins",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC18"
+    },
+    {
+        "to_id": 26,
+        "from_id": 177,
+        "type": "green goblins",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC18"
     }
 ]

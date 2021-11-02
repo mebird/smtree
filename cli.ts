@@ -5,7 +5,6 @@ import path from 'path';
 import prompt from 'prompt';
 import axios from 'axios';
 import { isString, max } from 'lodash';
-import { resolve } from 'q';
 
 const charDir = path.join(__dirname, 'src', 'data', 'characters');
 const mccMetadataDir = path.join(__dirname, 'src', 'data', 'metadata', 'mccMetadata');
@@ -49,7 +48,7 @@ program
         let uuid = '';
         try {
             uuid = await axios.get(`https://api.mojang.com/users/profiles/minecraft/${ign}`).then(res => res.data.id);
-        } catch (e) {
+        } catch (e: any) {
             console.error(`Unable to retrieve UUID for ${ign} (${e.message}); please set manually`);
         }
 
@@ -109,6 +108,26 @@ mccProgram
         addToMcc(id);
     });
 
+// Map of abbreviations for easy cli use
+const ColorMap: Record<string, RelationshipType> = {
+    a: RelationshipType.AQUA_AXOLOTLS,
+    aq: RelationshipType.AQUA_AXOLOTLS,
+    aqua: RelationshipType.AQUA_AXOLOTLS,
+    b: RelationshipType.BLUE_BATS,
+    cy: RelationshipType.CYN_CREEPERS,
+    grn: RelationshipType.GRN_GUARDIANS,
+    lime: RelationshipType.LIME_LLAMAS,
+    o: RelationshipType.ORG_OCELOTS,
+    org: RelationshipType.ORG_OCELOTS,
+    pink: RelationshipType.PNK_PARROTS,
+    pnk: RelationshipType.PNK_PARROTS,
+    purp: RelationshipType.PUR_PANDAS,
+    pur: RelationshipType.PUR_PANDAS,
+    prp: RelationshipType.PUR_PANDAS,
+    red: RelationshipType.RED_RABBITS,
+    ylw: RelationshipType.YLW_YAKS,
+};
+
 mccProgram
     .command('team <season> <number> <team> <players...>')
     .option('-w, --winners', 'if the given team won or not', false)
@@ -123,7 +142,8 @@ mccProgram
             }
         }
 
-        const type = team.toLowerCase() as RelationshipType;
+        const lowercaseTeam = team.toLowerCase();
+        const type = ColorMap[lowercaseTeam] || (lowercaseTeam as RelationshipType);
         if (!Object.values(RelationshipType).includes(type)) {
             console.error(`error: invalid team name (${type})`);
             return;
@@ -149,7 +169,8 @@ mccProgram
         }
         console.info(JSON.stringify(links));
 
-        const outputTeam = output_team ? output_team.toLowerCase() : type;
+        const lowercaseOutputTeam = output_team.toLowerCase();
+        let outputTeam = ColorMap[lowercaseOutputTeam] || output_team || type;
         if (!Object.values(RelationshipType).includes(outputTeam)) {
             console.error(`error: invalid output team name (${outputTeam})`);
             return;

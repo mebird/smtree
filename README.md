@@ -37,6 +37,25 @@ gatsby build
 gatsby serve -p 8000
 ```
 
+### Adding an MCC Entry
+
+```sh
+# example for s2 mcc18 (only one new player)
+npm run cli mcc team 2 18 "red ravens" 48 12 22 14 -- -o "red rabbits"
+npm run cli mcc team 2 18 "orange oozes" 71 34 46 43 -- -o "org"
+npm run cli mcc team 2 18 "mustard mummies" 48 12 22 14 -- -o "ylw" -w
+npm run cli new geenelly -- -s
+npm run cli mcc add 179
+npm run cli mcc team 2 18 "lime liches" 179 39 29 16 -- -o "lime"
+npm run cli mcc team 2 18 "green goblins" 45 23 26 177 -- -o "grn"
+npm run cli mcc team 2 18 "cyan centipedes" 53 114 178 2 -- -o "cy"
+npm run cli mcc team 2 18 "aqua abominations" 17 27 33 176 -- -o "aqua"
+npm run cli mcc team 2 18 "blue banshees" 139 32 70 75 -- -o "b"
+npm run cli mcc team 2 18 "violet vampires" 90 80 67 37 -- -o "pur"
+npm run cli mcc team 2 18 "fuchsia frankensteins" 4 8 24 5 -- -o "pnk"
+npm run cli mcc validate
+```
+
 ### Notes
 
 Built from the ground up. Wanted to play with Gastby/GraphQL/React.

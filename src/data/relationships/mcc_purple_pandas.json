@@ -910,5 +910,53 @@
         "smp_id": 2,
         "season": "2",
         "part": "MCC17"
+    },
+    {
+        "to_id": 90,
+        "from_id": 80,
+        "type": "violet vampires",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC18"
+    },
+    {
+        "to_id": 90,
+        "from_id": 67,
+        "type": "violet vampires",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC18"
+    },
+    {
+        "to_id": 90,
+        "from_id": 37,
+        "type": "violet vampires",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC18"
+    },
+    {
+        "to_id": 80,
+        "from_id": 67,
+        "type": "violet vampires",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC18"
+    },
+    {
+        "to_id": 80,
+        "from_id": 37,
+        "type": "violet vampires",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC18"
+    },
+    {
+        "to_id": 67,
+        "from_id": 37,
+        "type": "violet vampires",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC18"
     }
 ]

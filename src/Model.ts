@@ -37,6 +37,7 @@ export enum RelationshipType {
     RA_SHORTS = "rick astley's shorts",
 
     LIME_LLAMAS = 'lime llamas',
+    LIME_LICHES = 'lime  liches',
     MNT_MISTLETOES = 'mint mistletoes',
     DODGY_DOODLERS = 'dodgy doodlers',
 
@@ -44,11 +45,13 @@ export enum RelationshipType {
     EMRD_ELVES = 'emerald elves',
     GBLNS = 'the goblins',
     GREEN_GECKOS = 'green geckos',
+    GRN_GOBLINS = 'green goblins',
 
     CYN_CREEPERS = 'cyan creepers',
     CYN_CNDY_CNS = 'cyan candy canes',
     NOT_THE_RED_TM = 'not the red team',
     CYN_COYOTES = 'cyan coyotes',
+    CYN_CENTIPEDES = 'cyan centipedes',
 
     AQUA_HORSES = 'aqua horses',
     AQUA_AXOLOTLS = 'aqua axolotls',
@@ -61,6 +64,7 @@ export enum RelationshipType {
     BB_CATS = 'blue black cats',
     SAPPH_SANTAS = 'sapphire santas',
     PWR_BTMS = 'power bottoms',
+    BLUE_BANSHEES = 'blue banshees',
 
     PUR_PANDAS = 'purple pandas',
     VIO_VAMPIRES = 'violet vampires',

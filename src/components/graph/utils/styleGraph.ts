@@ -90,10 +90,12 @@ export const getLinkColor = (l: Link) => {
         case RelationshipType.RA_SHORTS:
             return '#7A4C21';
         case RelationshipType.LIME_LLAMAS:
+        case RelationshipType.LIME_LICHES:
         case RelationshipType.MNT_MISTLETOES:
         case RelationshipType.DODGY_DOODLERS:
             return '#6EED0E';
         case RelationshipType.GRN_GUARDIANS:
+        case RelationshipType.GRN_GOBLINS:
         case RelationshipType.EMRD_ELVES:
         case RelationshipType.GBLNS:
         case RelationshipType.GREEN_GECKOS:
@@ -102,6 +104,7 @@ export const getLinkColor = (l: Link) => {
         case RelationshipType.CYN_CNDY_CNS:
         case RelationshipType.NOT_THE_RED_TM:
         case RelationshipType.CYN_COYOTES:
+        case RelationshipType.CYN_CENTIPEDES:
             return '#006562';
         case RelationshipType.AQUA_ABOMINATIONS:
         case RelationshipType.AQUA_AXOLOTLS:
@@ -111,6 +114,7 @@ export const getLinkColor = (l: Link) => {
             return '#03E9DB';
         case RelationshipType.BB_CATS:
         case RelationshipType.BLUE_BATS:
+        case RelationshipType.BLUE_BANSHEES:
         case RelationshipType.SAPPH_SANTAS:
         case RelationshipType.SAPPH_SIMMERS:
         case RelationshipType.PWR_BTMS:

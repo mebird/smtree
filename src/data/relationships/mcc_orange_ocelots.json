@@ -942,5 +942,53 @@
         "smp_id": 2,
         "season": "2",
         "part": "MCC17"
+    },
+    {
+        "to_id": 71,
+        "from_id": 34,
+        "type": "orange oozes",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC18"
+    },
+    {
+        "to_id": 71,
+        "from_id": 46,
+        "type": "orange oozes",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC18"
+    },
+    {
+        "to_id": 71,
+        "from_id": 43,
+        "type": "orange oozes",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC18"
+    },
+    {
+        "to_id": 34,
+        "from_id": 46,
+        "type": "orange oozes",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC18"
+    },
+    {
+        "to_id": 34,
+        "from_id": 43,
+        "type": "orange oozes",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC18"
+    },
+    {
+        "to_id": 46,
+        "from_id": 43,
+        "type": "orange oozes",
+        "smp_id": 2,
+        "season": "2",
+        "part": "MCC18"
     }
 ]
